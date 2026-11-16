@@ -1,6 +1,7 @@
-FROM php:8.3-cli
+FROM php:8.5-cli
 
 RUN apt-get update && apt-get install -y \
+    ca-certificates \
     git \
     unzip \
     zip \
