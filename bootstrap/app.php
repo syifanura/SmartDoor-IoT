@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'device' => \App\Http\Middleware\DeviceAuth::class,
         ]);
         $middleware->redirectGuestsTo('/login');
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // Endpoint /api dan /panel selalu membalas JSON saat error
